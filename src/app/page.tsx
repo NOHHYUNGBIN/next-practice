@@ -1,7 +1,11 @@
+import Counter from "@/components/Counter";
+
 export default function Home() {
+  console.debug("서버");
   return (
-    <div>
+    <>
       <h1>홈페이지!</h1>
-    </div>
+      <Counter />
+    </>
   );
 }
