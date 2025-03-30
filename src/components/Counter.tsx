@@ -3,7 +3,6 @@ import { useState } from "react";
 
 export default function Counter() {
   const [count, setCount] = useState<number>(0);
-  console.debug("클라이언트");
   return (
     <>
       <p>카운트 : {count}</p>
