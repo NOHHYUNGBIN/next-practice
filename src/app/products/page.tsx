@@ -2,7 +2,7 @@ import { getProducts } from "@/api/products";
 import Meow from "@/components/Meow";
 import Link from "next/link";
 
-export const revalidate = 3;
+// export const revalidate = 3;
 
 export default async function ProductsPage() {
   const products = await getProducts();
