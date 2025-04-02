@@ -1,7 +1,8 @@
 import { getProducts } from "@/api/products";
 import Meow from "@/components/Meow";
+import Image from "next/image";
 import Link from "next/link";
-
+import clothsImage from "../../../public/image/clothes.jpg";
 // export const revalidate = 3;
 
 export default async function ProductsPage() {
@@ -17,6 +18,7 @@ export default async function ProductsPage() {
   return (
     <>
       <h1>프로덕트 페이지</h1>
+      <Image src={clothsImage} alt="cloths" />
       <ul>
         {products.map((item) => (
           <li key={item.id}>
