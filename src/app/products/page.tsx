@@ -2,7 +2,7 @@ import { getProducts } from "@/api/products";
 import Meow from "@/components/Meow";
 import Image from "next/image";
 import Link from "next/link";
-import clothsImage from "../../../public/image/clothes.jpg";
+import clothsImage from "../../../public/images/clothes.jpg";
 // export const revalidate = 3;
 
 export default async function ProductsPage() {
