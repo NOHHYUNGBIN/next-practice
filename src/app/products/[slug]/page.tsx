@@ -1,4 +1,5 @@
 import { getProduct, getProducts } from "@/api/products";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 
 type Props = {
@@ -11,7 +12,17 @@ export default async function ProductPage({ params }: Props) {
   const product = await getProduct(slug);
   if (!product) notFound();
 
-  return <h1>{product.name}페이지~</h1>;
+  return (
+    <>
+      <h1>{product.name}페이지~</h1>;
+      <Image
+        src={`/images/${product.image}`}
+        alt={product.name}
+        width="300"
+        height="300"
+      />
+    </>
+  );
 }
 
 //다이나믹 라우트에서 특정한 경로의 페이지를 미리만들어 놓기위하여..
