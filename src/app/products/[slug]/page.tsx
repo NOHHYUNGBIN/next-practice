@@ -1,6 +1,7 @@
 import { getProduct, getProducts } from "@/api/products";
+import GoProductsButton from "@/components/GoProductsButton";
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -10,7 +11,9 @@ export const revalidate = 3;
 export default async function ProductPage({ params }: Props) {
   const { slug } = await params;
   const product = await getProduct(slug);
-  if (!product) notFound();
+  if (!product) {
+    redirect("/products");
+  }
 
   return (
     <>
@@ -21,6 +24,7 @@ export default async function ProductPage({ params }: Props) {
         width="300"
         height="300"
       />
+      <GoProductsButton />
     </>
   );
 }
